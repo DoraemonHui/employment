@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Jobs</title>
+    <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+
+    <link rel="stylesheet" th:href="@{/css/common.css}">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <div th:replace="common :: header"></div>
+
+    <!-- 主要内容 -->
+    <div class="container main-content">
+        <div class="row">
+            <div class="col-9">
+                <div class="card">
+                    <div class="card-body padding0">
+                        <div class="list-group">
+                            <div th:each="job : ${jobs}" class="list-group-item">
+                                <div th:text="${job.title}"></div>
+                                <div th:text="${job.job_location}"></div>
+                                <div th:text="${job.origin}"></div>
+                                <div th:text="${job.min_salary}"></div>
+                                <div th:text="${job.max_salary}"></div>
+                                <div th:text="${job.url}"></div>
+                                <div th:text="${job.job_update_time}"></div>
+                                <div th:text="${job.crawl_time}"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

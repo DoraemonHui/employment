@@ -1,18 +1,23 @@
 package com.employment.employment.entity;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
+
+import java.io.Serializable;
 
 /**
  * @author jianghui
- * @date 2018/5/26 下午4:30
+ * @date 2018/6/11 下午9:35
  */
 
-@Document(collection="Jobs")
-public class JobInfo {
+@Document(indexName="job",type="job")
+public class Job implements Serializable {
     @Id
     private String id;
 
+    @Field(type = FieldType.Text)
     private String origin;
 
     private String job_location;
@@ -41,7 +46,7 @@ public class JobInfo {
 
     private  String job_desc;
 
-    public JobInfo(){
+    public Job(){
 
     }
 

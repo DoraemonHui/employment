@@ -6,5 +6,6 @@ spring:
       host: 39.108.130.238
       port: 27017
       database: jobs
+
   thymeleaf:
     mode: LEGACYHTML5

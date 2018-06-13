@@ -21,16 +21,41 @@
                     <div class="card-body padding0">
                         <div class="list-group">
                             <div th:each="job : ${jobs}" class="list-group-item">
-                                <div th:text="${job.title}"></div>
+                                <div><a th:href="@{${job.url}}" th:text="${job.title}"></a></div>
                                 <div th:text="${job.job_location}"></div>
                                 <div th:text="${job.origin}"></div>
                                 <div th:text="${job.min_salary}"></div>
-                                <div th:text="${job.max_salary}"></div>
-                                <div th:text="${job.url}"></div>
-                                <div th:text="${job.job_update_time}"></div>
-                                <div th:text="${job.crawl_time}"></div>
+                                <!--<div th:text="${job.max_salary}"></div>-->
+                                <!--<div><a th:href="@{${job.url}}" th:text="${job.url}"></a></div>-->
+                                <!--<div th:text="${job.job_update_time}"></div>-->
+                                <!--<div th:text="${job.crawl_time}"></div>-->
+                                <div th:text="${job.job_category}"></div>
+                                <div th:text="${job.company_name}"></div>
+                                <div th:text="${job.work_experience}"></div>
+                                <div th:text="${job.degree_needed}"></div>
+                                <!--<div th:text="${job.job_desc}"></div>-->
                             </div>
                         </div>
+
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination">
+                                <li>
+                                    <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li><a href="1">1</a></li>
+                                <li><a href="2">2</a></li>
+                                <li><a href="3">3</a></li>
+                                <li><a href="4">4</a></li>
+                                <li><a href="5">5</a></li>
+                                <li>
+                                    <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>
